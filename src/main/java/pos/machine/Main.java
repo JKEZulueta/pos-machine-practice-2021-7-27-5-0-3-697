@@ -9,8 +9,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         ItemDataLoader allItemsInfos = new ItemDataLoader();
-        List<ItemInfo> allItemInfo = allItemsInfos.getAllItemsInfo();
-        System.out.println(allItemInfo);
+        allItemsInfos.loadAllItemInfos();
 
 
     }
