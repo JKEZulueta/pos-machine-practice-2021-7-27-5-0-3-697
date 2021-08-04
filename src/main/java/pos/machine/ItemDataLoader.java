@@ -14,15 +14,11 @@ public class ItemDataLoader {
         itemInfos.add(item2Info);
         itemInfos.add(item3Info);
 
-
-
         return itemInfos;
-    }
-    public List<ItemInfo> getAllItemsInfo() {
-        return ItemDataLoader.loadAllItemInfos();
     }
 
     public static List<String> loadBarcodes() {
         return Arrays.asList("ITEM000000", "ITEM000000", "ITEM000000", "ITEM000000", "ITEM000001", "ITEM000001", "ITEM000004", "ITEM000004", "ITEM000004");
     }
+
 }

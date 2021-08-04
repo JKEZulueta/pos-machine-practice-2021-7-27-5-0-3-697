@@ -1,5 +1,7 @@
 package pos.machine;
 
+import java.util.List;
+
 public class ItemInfo {
     private final String barcode;
     private final String name;
@@ -10,6 +12,7 @@ public class ItemInfo {
         this.name = name;
         this.price = price;
     }
+
 
     public String getBarcode() {
         return barcode;
