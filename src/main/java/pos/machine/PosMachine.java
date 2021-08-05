@@ -10,7 +10,7 @@ public class PosMachine {
         List<Item> boughtItems = convertToItems(barcodes);
         Receipt receipt = computerReceipt(boughtItems);
 
-        return generateReceipt(receipt);
+        return renderReceipt(receipt);
     }
 
     private List<Item> convertToItems(List<String> barcodes) {
@@ -72,7 +72,7 @@ public class PosMachine {
         return ItemDataLoader.loadAllItemInfos();
     }
 
-    public String generateReceipt(Receipt receipt){
+    public String renderReceipt(Receipt receipt){
 
     }
 }
