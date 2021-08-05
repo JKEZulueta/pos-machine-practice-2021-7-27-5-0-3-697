@@ -4,7 +4,7 @@
 | convertToItems  | 10mins  | 18mins  | I was not able to get data from arraylist at first  | applied the lesson today from java streams to code efficiently see the examples  |
 | calculateItemsSubtotal  |  5mins | 4mins10  | Applied what I learned and implemented a simple total  | I tried using the alt insert to implement the getter and setter faster for the variables will use this more in the future  |
 | calculateTotalPrice  | 8mins  | 8mins51  |   | Implemented a simple way of calculating total price  |
-|  calculateReceipt |   |   |   |   |
+|  calculateReceipt |  3mins | 2mins03  |   | Called the List calculateTotalPrice with its input and it is equals to subtotal with its input  |
 | spliceItemsDetail  |   |   |   |   |
 | spliceReceipt  |   |   |   |   |
 | renderReceipt  |   |   |   |   |
