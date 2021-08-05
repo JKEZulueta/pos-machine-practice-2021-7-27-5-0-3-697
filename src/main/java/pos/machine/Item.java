@@ -39,4 +39,8 @@ public class Item {
     public void setItemsSubTotal(int itemsSubTotal) {
         this.itemsSubTotal = itemsSubTotal;
     }
+
+    public String getName() {
+        return name;
+    }
 }

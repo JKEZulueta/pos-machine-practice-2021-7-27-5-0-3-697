@@ -7,11 +7,10 @@ import java.util.stream.Collectors;
 
 public class PosMachine {
     public String printReceipt(List<String> barcodes) {
-        String myReceipt = generateReceipt(receipt);
         List<Item> boughtItems = convertToItems(barcodes);
         Receipt receipt = computerReceipt(boughtItems);
 
-        return receipt;
+        return generateReceipt(receipt);
     }
 
     private List<Item> convertToItems(List<String> barcodes) {
@@ -53,6 +52,16 @@ public class PosMachine {
             Receipt receipt = calculateTotalPrice(boughtItems);
 
             return receipt;
+    }
+
+    public String spliceItemDetails (Receipt receipt){
+        String itemDetails = "";
+        for(Item item : receipt.getItemDetails()){
+            itemDetails = itemDetails + String.format( "Item Name: %s, Item Quantity: %d, Unit Price: %d, Yuan, Item Subtotal: %d yuan\n",
+                    item.getName(), item.getQuantity(), item.getPrice(), item.getItemsSubTotal());
+        }
+
+        return "-------------Receipt" + itemDetails + "-------------";
     }
 
     private Receipt computerReceipt(List<Item> boughtItems) {
