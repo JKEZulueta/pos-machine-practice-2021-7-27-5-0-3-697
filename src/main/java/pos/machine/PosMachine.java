@@ -56,7 +56,7 @@ public class PosMachine {
     public String spliceItemDetails (Receipt receipt){
         String itemDetails = "";
         for(Item item : receipt.getItemDetails()){
-            itemDetails = itemDetails + String.format( "Name: %s, Quantity: %d, Unit Price: %d, (yuan), Subtotal: %d yuan\n",
+            itemDetails = itemDetails + String.format( "Name: %s, Quantity: %d, Unit price: %d (yuan), Subtotal: %d (yuan)\n",
                     item.getName(), item.getQuantity(), item.getPrice(), item.getItemsSubTotal());
         }
 
@@ -69,7 +69,7 @@ public class PosMachine {
     }
 
     public String spliceReceipt(String itemDetails, Double totalPrice){
-        return itemDetails + "----------------------\n" + String.format("Total: %d (yuan)\n **********************", totalPrice.intValue());
+        return itemDetails + "----------------------\n" + String.format("Total: %d (yuan)\n**********************", totalPrice.intValue());
     }
 
     public String renderReceipt(Receipt receipt){
