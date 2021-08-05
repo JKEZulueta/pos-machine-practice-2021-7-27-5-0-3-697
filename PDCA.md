@@ -7,8 +7,8 @@
 |  calculateReceipt |  3mins | 2mins03  |   | Called the List calculateTotalPrice with its input and it is equals to subtotal with its input  |
 | spliceItemsDetail  |  3mins | 3mins53  | was confused for some other task  | I'm gonna focus more on the task at hand and plan it all before starting to implement  |
 | spliceReceipt  |  3mins | 1min49  |   | Maintain this pace of improvement  |
-| renderReceipt  | 3mins  |   |   |   |
-|printReceipt   |   |   |   |   |
+| renderReceipt  | 3mins  | 2mins  |   | Getting the hang of Lists but still needs improvement on my knowledge for list  |
+|printReceipt   |  4mins | 10mins  | checked some of my codes are not being used and refactored to correct implementations  | was too busy implementing I forgot how I can output the test  |
 
 
 

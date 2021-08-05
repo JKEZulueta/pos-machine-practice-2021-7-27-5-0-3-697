@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class PosMachine {
     public String printReceipt(List<String> barcodes) {
         List<Item> boughtItems = convertToItems(barcodes);
-        Receipt receipt = computerReceipt(boughtItems);
+        Receipt receipt = calculateReceipt(boughtItems);
 
         return renderReceipt(receipt);
     }
@@ -49,34 +49,33 @@ public class PosMachine {
 
     public Receipt calculateReceipt(List<Item> boughtItems){
             List<Item> boughItemsWithSub = calculateItemsSubtotal(boughtItems);
-            Receipt receipt = calculateTotalPrice(boughtItems);
 
-            return receipt;
+            return calculateTotalPrice(boughItemsWithSub);
     }
 
     public String spliceItemDetails (Receipt receipt){
         String itemDetails = "";
         for(Item item : receipt.getItemDetails()){
-            itemDetails = itemDetails + String.format( "Item Name: %s, Item Quantity: %d, Unit Price: %d, Yuan, Item Subtotal: %d yuan\n",
+            itemDetails = itemDetails + String.format( "Name: %s, Quantity: %d, Unit Price: %d, (yuan), Subtotal: %d yuan\n",
                     item.getName(), item.getQuantity(), item.getPrice(), item.getItemsSubTotal());
         }
 
-        return "-------------Receipt" + itemDetails + "-------------";
+        return "***<store earning no money>Receipt***\n" + itemDetails;
     }
 
-    private Receipt computerReceipt(List<Item> boughtItems) {
-        return null;
-    }
 
     public static List<ItemInfo> getAllItemsInfo() {
         return ItemDataLoader.loadAllItemInfos();
     }
 
     public String spliceReceipt(String itemDetails, Double totalPrice){
-        return itemDetails + "-------------\n" + String.format("Total: %d yuan", totalPrice.intValue());
+        return itemDetails + "----------------------\n" + String.format("Total: %d (yuan)\n **********************", totalPrice.intValue());
     }
 
     public String renderReceipt(Receipt receipt){
-        
+        String itemDetails = spliceItemDetails(receipt);
+        double totalPrice = receipt.getTotalPrice();
+
+        return spliceReceipt(itemDetails, totalPrice);
     }
 }
