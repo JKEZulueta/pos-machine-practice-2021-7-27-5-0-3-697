@@ -39,6 +39,20 @@ public class PosMachine {
         return boughItems;
     }
 
+    public Receipt calculateTotalPrice(List<Item> boughtItems){
+        int totalPrice = 0;
+        for(Item item : boughtItems) { //item as variable, boughtItems as input
+            totalPrice = totalPrice + item.getItemsSubTotal(); //total price is equals to total price + itemsSubtotal
+        }
+        Receipt receipt = new Receipt(boughtItems, totalPrice); //instace receipt add new Receipt via boughtItems(input) and totalPrice
+        return receipt;
+    }
+
+    public Receipt calculateReceipt(List<Item> boughtItems){
+
+
+    }
+
     private Receipt computerReceipt(List<Item> boughtItems) {
         return null;
     }
