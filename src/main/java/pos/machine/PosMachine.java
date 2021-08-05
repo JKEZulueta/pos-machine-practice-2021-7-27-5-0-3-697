@@ -72,7 +72,11 @@ public class PosMachine {
         return ItemDataLoader.loadAllItemInfos();
     }
 
-    public String renderReceipt(Receipt receipt){
+    public String spliceReceipt(String itemDetails, Double totalPrice){
+        return itemDetails + "-------------\n" + String.format("Total: %d yuan", totalPrice.intValue());
+    }
 
+    public String renderReceipt(Receipt receipt){
+        
     }
 }
